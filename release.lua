@@ -7,7 +7,7 @@
  Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER 
 ]=]
 
--- Instances: 226 | Scripts: 1 | Modules: 0 | Tags: 0
+-- Instances: 238 | Scripts: 1 | Modules: 0 | Tags: 0
 local G2L = {};
 local function getGuiParent()
 	if typeof(gethui) == "function" then
@@ -103,7 +103,7 @@ G2L["8"]["BackgroundTransparency"] = 1;
 G2L["8"]["AnchorPoint"] = Vector2.new(0.5, 0);
 G2L["8"]["Size"] = UDim2.new(0.8, 0, 1, 0);
 G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["8"]["Text"] = [[The Presentation Experience v2.15]];
+G2L["8"]["Text"] = [[The Presentation Experience v2.17]];
 G2L["8"]["Name"] = [[Title]];
 G2L["8"]["Position"] = UDim2.new(0.5, 0, 0, 0);
 
@@ -203,7 +203,7 @@ G2L["12"] = Instance.new("ScrollingFrame", G2L["10"]);
 G2L["12"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
 G2L["12"]["BorderSizePixel"] = 0;
 G2L["12"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-G2L["12"]["CanvasPosition"] = Vector2.new(0, 552);
+G2L["12"]["CanvasPosition"] = Vector2.new(0, 1330);
 G2L["12"]["Name"] = [[Main]];
 G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["12"]["Selectable"] = false;
@@ -376,7 +376,6 @@ G2L["21"]["LayoutOrder"] = 1;
 G2L["21"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
 G2L["21"]["Text"] = [[]];
 G2L["21"]["Name"] = [[AutoClaimPlayTimeRejoin]];
-G2L["21"]["Visible"] = false;
 
 
 -- StarterGui.TPE.Menu.CurrentPage.Content.Main.AutoFarm.AutoClaimPlayTimeRejoin.UICorner
@@ -398,7 +397,7 @@ G2L["24"]["TextXAlignment"] = Enum.TextXAlignment.Left;
 G2L["24"]["TextScaled"] = true;
 G2L["24"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["24"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
-G2L["24"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["24"]["TextColor3"] = Color3.fromRGB(204, 204, 204);
 G2L["24"]["BackgroundTransparency"] = 1;
 G2L["24"]["Size"] = UDim2.new(0.7, 0, 0.7, 0);
 G2L["24"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
@@ -457,11 +456,10 @@ G2L["29"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], E
 G2L["29"]["TextColor3"] = Color3.fromRGB(125, 125, 125);
 G2L["29"]["BackgroundTransparency"] = 1;
 G2L["29"]["Size"] = UDim2.new(0.7, 0, 0.7, 0);
-G2L["29"]["Visible"] = false;
 G2L["29"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
-G2L["29"]["Text"] = [[Collects Play Time Rewards]];
+G2L["29"]["Text"] = [[Rejoins you to the same server you were in, if possible]];
 G2L["29"]["Name"] = [[Description]];
-G2L["29"]["Position"] = UDim2.new(0.025, 0, 0.8, 0);
+G2L["29"]["Position"] = UDim2.new(0.025, 0, 0.6, 0);
 
 
 -- StarterGui.TPE.Menu.CurrentPage.Content.Main.AutoFarm.AutoCollectPointsRain
@@ -2462,85 +2460,217 @@ G2L["da"]["Name"] = [[Description]];
 G2L["da"]["Position"] = UDim2.new(0.025, 0, 0.8, 0);
 
 
--- StarterGui.TPE.Menu.CurrentPage.Content.scrollBarArea
-G2L["db"] = Instance.new("Frame", G2L["10"]);
-G2L["db"]["ZIndex"] = 0;
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options
+G2L["db"] = Instance.new("Frame", G2L["12"]);
 G2L["db"]["BorderSizePixel"] = 0;
-G2L["db"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-G2L["db"]["Size"] = UDim2.new(0, 10, 1, 0);
-G2L["db"]["Position"] = UDim2.new(1, -8, 0, 0);
-G2L["db"]["Name"] = [[scrollBarArea]];
+G2L["db"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["db"]["AutomaticSize"] = Enum.AutomaticSize.Y;
+G2L["db"]["Size"] = UDim2.new(1, 0, 0, 0);
+G2L["db"]["Name"] = [[Options]];
+G2L["db"]["BackgroundTransparency"] = 1;
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.UIListLayout
+G2L["dc"] = Instance.new("UIListLayout", G2L["db"]);
+G2L["dc"]["Padding"] = UDim.new(0, 10);
+G2L["dc"]["SortOrder"] = Enum.SortOrder.LayoutOrder;
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.Header
+G2L["dd"] = Instance.new("TextLabel", G2L["db"]);
+G2L["dd"]["TextWrapped"] = true;
+G2L["dd"]["BorderSizePixel"] = 0;
+G2L["dd"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["dd"]["TextScaled"] = true;
+G2L["dd"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["dd"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["dd"]["TextColor3"] = Color3.fromRGB(205, 205, 205);
+G2L["dd"]["BackgroundTransparency"] = 1;
+G2L["dd"]["Size"] = UDim2.new(1, 0, 0, 26);
+G2L["dd"]["Text"] = [[Options]];
+G2L["dd"]["Name"] = [[Header]];
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript
+G2L["de"] = Instance.new("TextButton", G2L["db"]);
+G2L["de"]["TextWrapped"] = true;
+G2L["de"]["TextSize"] = 14;
+G2L["de"]["TextScaled"] = true;
+G2L["de"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["de"]["BackgroundColor3"] = Color3.fromRGB(71, 71, 71);
+G2L["de"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+G2L["de"]["ZIndex"] = 10;
+G2L["de"]["BackgroundTransparency"] = 1;
+G2L["de"]["Size"] = UDim2.new(1, 0, 0, 60);
+G2L["de"]["LayoutOrder"] = 1;
+G2L["de"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["de"]["Text"] = [[]];
+G2L["de"]["Name"] = [[JoinWithScript]];
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.UICorner
+G2L["df"] = Instance.new("UICorner", G2L["de"]);
+G2L["df"]["CornerRadius"] = UDim.new(1, 0);
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.UITextSizeConstraint
+G2L["e0"] = Instance.new("UITextSizeConstraint", G2L["de"]);
+G2L["e0"]["MaxTextSize"] = 40;
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.TextLabel
+G2L["e1"] = Instance.new("TextLabel", G2L["de"]);
+G2L["e1"]["TextWrapped"] = true;
+G2L["e1"]["ZIndex"] = 10;
+G2L["e1"]["TextSize"] = 14;
+G2L["e1"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["e1"]["TextScaled"] = true;
+G2L["e1"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e1"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["e1"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e1"]["BackgroundTransparency"] = 1;
+G2L["e1"]["Size"] = UDim2.new(0.7, 0, 0.7, 0);
+G2L["e1"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["e1"]["Text"] = [[Join with script]];
+G2L["e1"]["Position"] = UDim2.new(0.025, 0, 0.15, 0);
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.Checkmark
+G2L["e2"] = Instance.new("Frame", G2L["de"]);
+G2L["e2"]["Active"] = true;
+G2L["e2"]["ZIndex"] = 2;
+G2L["e2"]["BorderSizePixel"] = 0;
+G2L["e2"]["BackgroundColor3"] = Color3.fromRGB(101, 101, 101);
+G2L["e2"]["Selectable"] = true;
+G2L["e2"]["AnchorPoint"] = Vector2.new(1, 0.5);
+G2L["e2"]["Size"] = UDim2.new(0, 56, 0, 56);
+G2L["e2"]["Position"] = UDim2.new(1, -8, 0.5, 0);
+G2L["e2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e2"]["Name"] = [[Checkmark]];
+G2L["e2"]["LayoutOrder"] = 7;
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.Checkmark.UICorner
+G2L["e3"] = Instance.new("UICorner", G2L["e2"]);
+G2L["e3"]["CornerRadius"] = UDim.new(0, 20);
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.Checkmark.Icon
+G2L["e4"] = Instance.new("ImageLabel", G2L["e2"]);
+G2L["e4"]["BorderSizePixel"] = 0;
+G2L["e4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e4"]["ImageTransparency"] = 1;
+G2L["e4"]["Image"] = [[rbxassetid://109887188019909]];
+G2L["e4"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["e4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["e4"]["BackgroundTransparency"] = 1;
+G2L["e4"]["Name"] = [[Icon]];
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.Checkmark.UIPadding
+G2L["e5"] = Instance.new("UIPadding", G2L["e2"]);
+G2L["e5"]["PaddingTop"] = UDim.new(0, 10);
+G2L["e5"]["PaddingRight"] = UDim.new(0, 10);
+G2L["e5"]["PaddingLeft"] = UDim.new(0, 10);
+G2L["e5"]["PaddingBottom"] = UDim.new(0, 10);
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.Main.Options.JoinWithScript.Description
+G2L["e6"] = Instance.new("TextLabel", G2L["de"]);
+G2L["e6"]["TextWrapped"] = true;
+G2L["e6"]["ZIndex"] = 10;
+G2L["e6"]["TextSize"] = 19;
+G2L["e6"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["e6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e6"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["e6"]["TextColor3"] = Color3.fromRGB(125, 125, 125);
+G2L["e6"]["BackgroundTransparency"] = 1;
+G2L["e6"]["Size"] = UDim2.new(0.82466, 0, 0.7, 0);
+G2L["e6"]["BorderColor3"] = Color3.fromRGB(28, 43, 54);
+G2L["e6"]["Text"] = [[Executes the script for you after teleporting (server-hop or rejoin)]];
+G2L["e6"]["Name"] = [[Description]];
+G2L["e6"]["Position"] = UDim2.new(0.025, 0, 0.6, 0);
+
+
+-- StarterGui.TPE.Menu.CurrentPage.Content.scrollBarArea
+G2L["e7"] = Instance.new("Frame", G2L["10"]);
+G2L["e7"]["ZIndex"] = 0;
+G2L["e7"]["BorderSizePixel"] = 0;
+G2L["e7"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+G2L["e7"]["Size"] = UDim2.new(0, 10, 1, 0);
+G2L["e7"]["Position"] = UDim2.new(1, -8, 0, 0);
+G2L["e7"]["Name"] = [[scrollBarArea]];
 
 
 -- StarterGui.TPE.Menu.CurrentPage.Content.scrollBarArea.UICorner
-G2L["dc"] = Instance.new("UICorner", G2L["db"]);
-G2L["dc"]["CornerRadius"] = UDim.new(1, 0);
+G2L["e8"] = Instance.new("UICorner", G2L["e7"]);
+G2L["e8"]["CornerRadius"] = UDim.new(1, 0);
 
 
 -- StarterGui.TPE.Menu.LocalScript
-G2L["dd"] = Instance.new("LocalScript", G2L["3"]);
+G2L["e9"] = Instance.new("LocalScript", G2L["3"]);
 
 
 
 -- StarterGui.TPE.Menu.LocalScript.buttonPress
-G2L["de"] = Instance.new("Sound", G2L["dd"]);
-G2L["de"]["Name"] = [[buttonPress]];
+G2L["ea"] = Instance.new("Sound", G2L["e9"]);
+G2L["ea"]["Name"] = [[buttonPress]];
 -- [ERROR] cannot convert AudioContent, please report to "https://github.com/uniquadev/GuiToLuaConverter/issues"
-G2L["de"]["SoundId"] = [[rbxassetid://6895079853]];
+G2L["ea"]["SoundId"] = [[rbxassetid://6895079853]];
 
 
 -- StarterGui.TPE.MobileToggle
-G2L["df"] = Instance.new("TextButton", G2L["1"]);
-G2L["df"]["TextWrapped"] = true;
-G2L["df"]["BorderSizePixel"] = 0;
-G2L["df"]["TextSize"] = 14;
-G2L["df"]["TextScaled"] = true;
-G2L["df"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["df"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
-G2L["df"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
-G2L["df"]["ZIndex"] = 2147483647;
-G2L["df"]["AnchorPoint"] = Vector2.new(1, 0);
-G2L["df"]["Size"] = UDim2.new(0.05, 100, 0.02, 30);
-G2L["df"]["BorderColor3"] = Color3.fromRGB(28, 75, 54);
-G2L["df"]["Text"] = [[]];
-G2L["df"]["Name"] = [[MobileToggle]];
-G2L["df"]["Position"] = UDim2.new(1, -12, 0, 64);
+G2L["eb"] = Instance.new("TextButton", G2L["1"]);
+G2L["eb"]["TextWrapped"] = true;
+G2L["eb"]["BorderSizePixel"] = 0;
+G2L["eb"]["TextSize"] = 14;
+G2L["eb"]["TextScaled"] = true;
+G2L["eb"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["eb"]["BackgroundColor3"] = Color3.fromRGB(41, 41, 41);
+G2L["eb"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["eb"]["ZIndex"] = 2147483647;
+G2L["eb"]["AnchorPoint"] = Vector2.new(1, 0);
+G2L["eb"]["Size"] = UDim2.new(0.05, 100, 0.02, 30);
+G2L["eb"]["BorderColor3"] = Color3.fromRGB(28, 75, 54);
+G2L["eb"]["Text"] = [[]];
+G2L["eb"]["Name"] = [[MobileToggle]];
+G2L["eb"]["Position"] = UDim2.new(1, -12, 0, 64);
 
 
 -- StarterGui.TPE.MobileToggle.UICorner
-G2L["e0"] = Instance.new("UICorner", G2L["df"]);
+G2L["ec"] = Instance.new("UICorner", G2L["eb"]);
 
 
 
 -- StarterGui.TPE.MobileToggle.title
-G2L["e1"] = Instance.new("TextLabel", G2L["df"]);
-G2L["e1"]["TextWrapped"] = true;
-G2L["e1"]["ZIndex"] = 9999999;
-G2L["e1"]["BorderSizePixel"] = 0;
-G2L["e1"]["TextSize"] = 14;
-G2L["e1"]["TextScaled"] = true;
-G2L["e1"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
-G2L["e1"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
-G2L["e1"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
-G2L["e1"]["BackgroundTransparency"] = 1;
-G2L["e1"]["Size"] = UDim2.new(1, 0, 0.8, 0);
-G2L["e1"]["BorderColor3"] = Color3.fromRGB(28, 75, 54);
-G2L["e1"]["Text"] = [[TPE GUI]];
-G2L["e1"]["Name"] = [[title]];
-G2L["e1"]["Position"] = UDim2.new(0, 0, 0.1, 0);
+G2L["ed"] = Instance.new("TextLabel", G2L["eb"]);
+G2L["ed"]["TextWrapped"] = true;
+G2L["ed"]["ZIndex"] = 9999999;
+G2L["ed"]["BorderSizePixel"] = 0;
+G2L["ed"]["TextSize"] = 14;
+G2L["ed"]["TextScaled"] = true;
+G2L["ed"]["BackgroundColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["ed"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Heavy, Enum.FontStyle.Normal);
+G2L["ed"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["ed"]["BackgroundTransparency"] = 1;
+G2L["ed"]["Size"] = UDim2.new(1, 0, 0.8, 0);
+G2L["ed"]["BorderColor3"] = Color3.fromRGB(28, 75, 54);
+G2L["ed"]["Text"] = [[TPE GUI]];
+G2L["ed"]["Name"] = [[title]];
+G2L["ed"]["Position"] = UDim2.new(0, 0, 0.1, 0);
 
 
 -- StarterGui.TPE.MobileToggle.UIStroke
-G2L["e2"] = Instance.new("UIStroke", G2L["df"]);
-G2L["e2"]["Transparency"] = 0.5;
-G2L["e2"]["Thickness"] = 2;
-G2L["e2"]["Color"] = Color3.fromRGB(76, 76, 76);
-G2L["e2"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["ee"] = Instance.new("UIStroke", G2L["eb"]);
+G2L["ee"]["Transparency"] = 0.5;
+G2L["ee"]["Thickness"] = 2;
+G2L["ee"]["Color"] = Color3.fromRGB(76, 76, 76);
+G2L["ee"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 
 
 -- StarterGui.TPE.Menu.LocalScript
-local function C_dd()
-local script = G2L["dd"];
+local function C_e9()
+local script = G2L["e9"];
 	if game.PlaceId ~= 7772810845 then
 		local ScreenGui = script:FindFirstAncestorOfClass("ScreenGui")
 	
@@ -2581,7 +2711,7 @@ local script = G2L["dd"];
 	
 	Environment.TPELoaded = true
 	
-	pcall(function() loadstring(game:HttpGet("https://scriptblox.com/ingest/clientv2.lua"))("proj_525da6b1b147", "2.15", false) end)
+	pcall(function() loadstring(game:HttpGet("https://scriptblox.com/ingest/clientv2.lua"))("proj_525da6b1b147", "2.17", false) end)
 	
 	local TweenService = game:GetService("TweenService")
 	local UserInputService = game:GetService("UserInputService")
@@ -2663,7 +2793,7 @@ local script = G2L["dd"];
 	
 	local AutoFarm = CurrentPage.Content.Main.AutoFarm
 	local AutoClaimPlayTime = AutoFarm.AutoClaimPlayTime
-	-- local AutoClaimPlayTimeRejoin = AutoFarm.AutoClaimPlayTimeRejoin
+	local AutoClaimPlayTimeRejoin = AutoFarm.AutoClaimPlayTimeRejoin
 	local AutoCollectPointsRain = AutoFarm.AutoCollectPointsRain
 	local AutoHomework = AutoFarm.AutoHomework
 	local AutoAnswerTeacherQuestions = AutoFarm.AutoAnswerTeacherQuestions
@@ -2687,6 +2817,9 @@ local script = G2L["dd"];
 	local MuteAmongusYell = Actions.MuteAmongusYell
 	local MuteMog = Actions.MuteMog
 	local MuteBlackFart = Actions.MuteBlackFart
+	
+	local Options = CurrentPage.Content.Main.Options
+	local JoinWithScript = Options.JoinWithScript
 	
 	local scaleInfo = TweenInfo.new(0.15, Enum.EasingStyle.Quint)
 	
@@ -3270,19 +3403,134 @@ local script = G2L["dd"];
 		end,
 	})
 	
-	--local AutoClaimPlayTimeRejoinToggle = setupSubOption(
-	--	AutoClaimToggle,
-	--	AutoClaimPlayTimeRejoin,
-	--	{
-	--		onChanged = function(checked)
-	--			if checked then
-	--
-	--			else
-	--
-	--			end
-	--		end,
-	--	}
-	--)
+	
+	local AutoClaimPlayTimeRejoinTask
+	local AutoClaimPlayTimeRejoinFailureEvent
+	local AutoClaimPlayTimeRejoinCountdown = false
+	
+	local function RejoinNotification(text, duration)
+		pcall(function()
+			game:GetService("StarterGui"):SetCore("SendNotification", {
+				Title = "TPE Hub",
+				Text = text,
+				Duration = duration
+			})
+		end)
+	end
+	
+	local AutoClaimPlayTimeRejoinToggle = setupSubOption(
+		AutoClaimToggle,
+		AutoClaimPlayTimeRejoin,
+		{
+			onChanged = function(checked)
+				if AutoClaimPlayTimeRejoinTask then
+					task.cancel(AutoClaimPlayTimeRejoinTask)
+					AutoClaimPlayTimeRejoinTask = nil
+				end
+	
+				if AutoClaimPlayTimeRejoinFailureEvent then
+					AutoClaimPlayTimeRejoinFailureEvent:Disconnect()
+					AutoClaimPlayTimeRejoinFailureEvent = nil
+				end
+	
+				if not checked then
+					if AutoClaimPlayTimeRejoinCountdown then
+						AutoClaimPlayTimeRejoinCountdown = false
+						RejoinNotification("Action Canceled.", 15)
+					end
+	
+					return
+				end
+	
+				AutoClaimPlayTimeRejoinTask = task.spawn(function()
+					local player = game:GetService("Players").LocalPlayer
+					local TeleportService = game:GetService("TeleportService")
+	
+					local stats = player.PlayerGui
+						:WaitForChild("SomeEmotes")
+						:WaitForChild("actions")
+						:WaitForChild("Lists")
+						:WaitForChild("h")
+						:WaitForChild("stats")
+	
+					while true do
+						local stat = stats:GetChildren()[5]
+						local label = stat and stat:FindFirstChild("statValue")
+						local hours = label
+							and label:IsA("TextLabel")
+							and tonumber(label.Text:match("^(%d+)%s+Hours?"))
+	
+						if hours and hours >= 1 then
+							AutoClaimPlayTimeRejoinCountdown = true
+	
+							RejoinNotification(
+								"All Playtime Rewards claimed. You will be rejoined in 10 seconds because Auto Claim PlayTime Rejoin is enabled. To cancel, disable this option.",
+								15
+							)
+	
+							task.wait(3)
+	
+							for seconds = 10, 1, -1 do
+								RejoinNotification(
+									"Rejoining in " .. seconds .. "...",
+									1
+								)
+	
+								task.wait(1)
+							end
+	
+							local attempt = 0
+							local failed = false
+							local failureReason
+	
+							AutoClaimPlayTimeRejoinFailureEvent = TeleportService.TeleportInitFailed:Connect(
+								function(failedPlayer, result, message)
+									if failedPlayer == player then
+										failed = true
+										failureReason = tostring(message)
+									end
+								end
+							)
+	
+							while true do
+								attempt += 1
+								failed = false
+								failureReason = nil
+	
+								RejoinNotification(
+									"Trying to rejoin... Attempt " .. attempt,
+									10
+								)
+	
+								local success, err = pcall(function()
+									TeleportService:TeleportToPlaceInstance(
+										game.PlaceId,
+										game.JobId,
+										player
+									)
+								end)
+	
+								if not success then
+									failed = true
+									failureReason = tostring(err)
+								end
+	
+								while not failed do
+									task.wait(0.1)
+								end
+	
+								warn("Unable to rejoin: " .. tostring(failureReason))
+	
+								task.wait(3)
+							end
+						end
+	
+						task.wait(1)
+					end
+				end)
+			end,
+		}
+	)
 	
 	local AutoCollectPointsRainLoopState
 	
@@ -4873,6 +5121,58 @@ local script = G2L["dd"];
 		end,
 	})
 	
+	local JoinWithScriptToggle = setupToggle(JoinWithScript, {
+		onChanged = function(checked)
+			if not checked then
+				return
+			end
+	
+			local queue = queue_on_teleport
+				or queueonteleport
+				or (type(syn) == "table" and syn.queue_on_teleport)
+	
+			if type(queue) ~= "function" then
+				return
+			end
+	
+			local source = [=[
+				if not game:IsLoaded() then
+					game.Loaded:Wait()
+				end
+	
+				local success, enabled = pcall(function()
+					if type(isfile) ~= "function"
+						or type(readfile) ~= "function"
+					then
+						return false
+					end
+	
+					if not isfile("TPE.json") then
+						return false
+					end
+	
+					local Config = game:GetService("HttpService"):JSONDecode(
+						readfile("TPE.json")
+					)
+	
+					return Config.JoinWithScript == true
+				end)
+	
+				if success and enabled then
+					pcall(function()
+						loadstring(game:HttpGet(
+							"https://raw.githubusercontent.com/rostpav/TPEHub/refs/heads/main/release.lua"
+						))()
+					end)
+				end
+			]=]
+	
+			pcall(function()
+				queue(source)
+			end)
+		end,
+	})
+	
 	t.Toggle(false)
 	
 	local Elapsed = os.clock() - SplashTime
@@ -4923,6 +5223,6 @@ local script = G2L["dd"];
 		})
 	end)
 end;
-task.spawn(C_dd);
+task.spawn(C_e9);
 
 return G2L["1"], require;
