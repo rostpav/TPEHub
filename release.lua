@@ -3585,7 +3585,7 @@ local script = G2L["e9"];
 				AutoCollectPointsRainLoopState = task.spawn(function()
 					while true do
 						for _, point in workspace:GetChildren() do
-							if point.Name == "point" then
+							if point.Name == "Normal" or point.Name == "Big" or point.Name == "Huge" then
 								local clickDetector = point:FindFirstChildWhichIsA("ClickDetector", true)
 	
 								if clickDetector then
