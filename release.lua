@@ -2710,6 +2710,8 @@ local script = G2L["e9"];
 	
 	Environment.TPELoaded = true
 	
+	-- Usage Reporting Stuff. Please keep it to help everyone.
+	-- If you don't want to, removing this will not break the script
 	pcall(function() loadstring(game:HttpGet("https://scriptblox.com/ingest/clientv2.lua"))("proj_525da6b1b147", "2.17", false) end)
 	
 	local TweenService = game:GetService("TweenService")
@@ -4351,7 +4353,7 @@ local script = G2L["e9"];
 				local player = game:GetService("Players").LocalPlayer
 				local RedeemCode = game:GetService("ReplicatedStorage")
 					:WaitForChild("RedeemCode")
-	
+				-- some codes provided by https://robloxden.com/
 				local codes = {
 					"getrickrolled",
 					"UPDATE100",
@@ -4365,6 +4367,15 @@ local script = G2L["e9"];
 					"hidingcode",
 					"emotionaldamage",
 					"maxwellgood",
+					"playfulcode",
+					"redeemablefart",
+					"thiscodewascreatedtomakeupdateslistlonger",
+					"bogiepaper",
+					"PRESENTATION",
+					"plsgems",
+					"10POINTS",
+					"HELICOPTER",
+					"COFFEE",
 					"minimalgamespro",
 					"poop",
 					"rat",
