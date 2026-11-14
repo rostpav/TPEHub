@@ -203,7 +203,6 @@ G2L["12"] = Instance.new("ScrollingFrame", G2L["10"]);
 G2L["12"]["ScrollingDirection"] = Enum.ScrollingDirection.Y;
 G2L["12"]["BorderSizePixel"] = 0;
 G2L["12"]["CanvasSize"] = UDim2.new(0, 0, 0, 0);
-G2L["12"]["CanvasPosition"] = Vector2.new(0, 1330);
 G2L["12"]["Name"] = [[Main]];
 G2L["12"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["12"]["Selectable"] = false;
@@ -2681,7 +2680,7 @@ local script = G2L["e9"];
 		pcall(function()
 			game:GetService("StarterGui"):SetCore("SendNotification", {
 				Title = "TPE Hub Failed to Load!",
-				Text = "Not supported game",
+				Text = "Game not supported!\nPlace ID: 7772810845\nUniverse ID: 3012965062",
 				Duration = 5
 			})
 		end)
@@ -3117,6 +3116,10 @@ local script = G2L["e9"];
 		DisableCameraShake = {
 			"getsenv",
 		},
+	
+		AutoClaimPlayTimeRejoin = {
+			"firesignal",
+		},
 	}
 	
 	local FeatureMissing = {}
@@ -3403,8 +3406,8 @@ local script = G2L["e9"];
 		end,
 	})
 	
-	
 	local AutoClaimPlayTimeRejoinTask
+	local AutoClaimPlayTimeRejoinRoleplayNameTask
 	local AutoClaimPlayTimeRejoinFailureEvent
 	local AutoClaimPlayTimeRejoinCountdown = false
 	
@@ -3428,6 +3431,11 @@ local script = G2L["e9"];
 					AutoClaimPlayTimeRejoinTask = nil
 				end
 	
+				if AutoClaimPlayTimeRejoinRoleplayNameTask then
+					task.cancel(AutoClaimPlayTimeRejoinRoleplayNameTask)
+					AutoClaimPlayTimeRejoinRoleplayNameTask = nil
+				end
+	
 				if AutoClaimPlayTimeRejoinFailureEvent then
 					AutoClaimPlayTimeRejoinFailureEvent:Disconnect()
 					AutoClaimPlayTimeRejoinFailureEvent = nil
@@ -3443,6 +3451,27 @@ local script = G2L["e9"];
 				end
 	
 				AutoClaimPlayTimeRejoinTask = task.spawn(function()
+	
+					AutoClaimPlayTimeRejoinRoleplayNameTask = task.spawn(function()
+						local someEmotes = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("SomeEmotes")
+	
+						local function clickDone(done)
+							if done.Name == "done" and done:IsA("GuiButton") then
+								firesignal(done.MouseButton1Click)
+							end
+						end
+	
+						local done = someEmotes:FindFirstChild("done")
+	
+						if done then
+							clickDone(done)
+						end
+	
+						while true do
+							clickDone(someEmotes.ChildAdded:Wait())
+						end
+					end)
+	
 					local player = game:GetService("Players").LocalPlayer
 					local TeleportService = game:GetService("TeleportService")
 	
@@ -4332,6 +4361,8 @@ local script = G2L["e9"];
 					"bookworm",
 					"code",
 					"It",
+					"scaryprincipal",
+					"hidingcode",
 					"emotionaldamage",
 					"maxwellgood",
 					"minimalgamespro",
