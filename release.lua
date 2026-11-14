@@ -3455,11 +3455,20 @@ local script = G2L["e9"];
 				AutoClaimPlayTimeRejoinTask = task.spawn(function()
 	
 					AutoClaimPlayTimeRejoinRoleplayNameTask = task.spawn(function()
-						local someEmotes = game:GetService("Players").LocalPlayer.PlayerGui:WaitForChild("SomeEmotes")
+						local playerGui = game:GetService("Players").LocalPlayer.PlayerGui
+						local someEmotes = playerGui:WaitForChild("SomeEmotes")
 	
 						local function clickDone(done)
-							if done.Name == "done" and done:IsA("GuiButton") then
-								firesignal(done.MouseButton1Click)
+							if done.Name ~= "done" or not done:IsA("GuiButton") then
+								return
+							end
+	
+							while playerGui:FindFirstChild("LoadingScreen") do
+								playerGui.ChildRemoved:Wait()
+							end
+	
+							if done.Parent == someEmotes then
+								pcall(firesignal, done.MouseButton1Click)
 							end
 						end
 	
